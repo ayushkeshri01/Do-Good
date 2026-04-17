@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { AdminCommunitiesContent } from "./admin-communities-content";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminCommunitiesPage() {
   const communities = await prisma.community.findMany({
     include: {
