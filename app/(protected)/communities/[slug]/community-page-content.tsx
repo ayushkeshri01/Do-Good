@@ -65,7 +65,6 @@ export function CommunityPageContent({
   community,
   posts,
   isMember,
-  isAdmin,
   currentUserId,
 }: CommunityPageContentProps) {
   const router = useRouter();

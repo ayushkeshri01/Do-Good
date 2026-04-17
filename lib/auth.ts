@@ -10,18 +10,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   trustHost: true,
   // Suppress noisy [auth][error] JWTSessionError logs caused by stale cookies
   logger: {
-    error: (error: any) => {
+    error: (error: Error) => {
+      const message = error?.message || "";
       if (
         error?.name === "JWTSessionError" ||
-        error?.message?.includes("JWTSessionError") ||
-        error?.message?.includes("JWEInvalid")
+        message.includes("JWTSessionError") ||
+        message.includes("JWEInvalid")
       ) {
-        // Silently ignore — stale cookie, NextAuth already returns null session
         return;
       }
       console.error("[auth][error]", error);
     },
-    warn: (code: any) => {
+    warn: (code: string) => {
       console.warn("[auth][warn]", code);
     },
     debug: () => {},

@@ -51,11 +51,11 @@ function LoginContent() {
   }, []);
 
   // Switches between Tabs safely
-  const handleTabSwitch = (val: string) => {
-     setActiveTab(val as any);
-     setErrorMsg("");
-     setOtpSent(false);
-  };
+const handleTabSwitch = (val: string) => {
+      setActiveTab(val as "signin" | "signup");
+      setErrorMsg("");
+      setOtpSent(false);
+   };
 
   // ----- SIGN IN FLOW -----
   const handleSignIn = async (e: React.FormEvent) => {
@@ -82,7 +82,7 @@ function LoginContent() {
         router.push("/feed");
         router.refresh();
       }
-    } catch (err) {
+    } catch {
       setErrorMsg("An unexpected error occurred.");
       setIsLoading(false);
     }
@@ -120,7 +120,7 @@ function LoginContent() {
       } else {
         setErrorMsg(data.error || "Failed to send code");
       }
-    } catch (err) {
+    } catch {
       setErrorMsg("An unexpected error occurred");
     } finally {
       setIsLoading(false);
@@ -171,7 +171,7 @@ function LoginContent() {
         router.push("/feed");
         router.refresh();
       }
-    } catch (err) {
+    } catch {
       setErrorMsg("Failed to verify code and register.");
       setIsLoading(false);
     }
@@ -306,7 +306,7 @@ function LoginContent() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Check your email</h3>
-                    <p className="text-sm text-muted-foreground">We've sent a 6-digit code to <span className="font-medium text-foreground">{email}</span></p>
+                    <p className="text-sm text-muted-foreground">We&apos;ve sent a 6-digit code to <span className="font-medium text-foreground">{email}</span></p>
                   </div>
                 </div>
 

@@ -1,4 +1,5 @@
-import { PrismaClient, Role } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { Role } from "@/types/Role";
 import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
@@ -8,7 +9,7 @@ const prisma = new PrismaClient();
 // ============================================
 // Replace with your actual Google email address
 // This email MUST match what you'll use to sign in
-const ADMIN_EMAIL: string = "dogood.team@outlook.com";
+const ADMIN_EMAIL: string = "admin@outlook.com";
 
 // Replace with the admin's display name
 const ADMIN_NAME = "Admin - Do-Good";
@@ -43,7 +44,7 @@ async function createAdmin() {
     console.log(`   Email: ${ADMIN_EMAIL}`);
     console.log(`   Name: ${ADMIN_NAME}`);
 
-    const password = "D0good123!"; // Default password (you should change this after first login)
+    const password = "admin"; // Default password (you should change this after first login)
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const admin = await prisma.user.create({

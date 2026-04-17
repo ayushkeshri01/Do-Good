@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, Pencil, Trash2 } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -14,10 +14,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { formatDate } from "@/lib/utils";
-
 interface Community {
   id: string;
   name: string;
@@ -44,7 +42,6 @@ export function AdminCommunitiesContent({
 }: AdminCommunitiesContentProps) {
   const router = useRouter();
   const [isCreating, setIsCreating] = useState(false);
-  const [isEditing, setIsEditing] = useState<Community | null>(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 

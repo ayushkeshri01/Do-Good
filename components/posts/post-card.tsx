@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, MessageCircle, MoreHorizontal, Flag, Eye, EyeOff } from "lucide-react";
+import { Heart, MessageCircle, MoreHorizontal, Flag, EyeOff } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -65,13 +65,6 @@ export function PostCard({
   );
   const [likeCount, setLikeCount] = useState(post._count.likes);
   const [dislikeCount, setDislikeCount] = useState(post._count.dislikes);
-
-  useEffect(() => {
-    setIsLiked(post.likes.some((like) => like.userId === currentUserId));
-    setIsDisliked(post.dislikes.some((dislike) => dislike.userId === currentUserId));
-    setLikeCount(post._count.likes);
-    setDislikeCount(post._count.dislikes);
-  }, [post, currentUserId]);
 
   const handleLike = () => {
     if (!currentUserId) return;
