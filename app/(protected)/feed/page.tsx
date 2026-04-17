@@ -15,7 +15,7 @@ export default async function FeedPage() {
     select: { communityId: true },
   });
 
-  const communityIds = userCommunities.map((c) => c.communityId);
+  const communityIds = userCommunities.map((c: { communityId: string }) => c.communityId);
 
   const posts = await prisma.post.findMany({
     where: {

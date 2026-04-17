@@ -32,7 +32,7 @@ export default async function LeaderboardPage() {
     take: 100,
   });
 
-  const currentUserRank = leaders.findIndex((u) => u.id === session.user.id) + 1;
+  const currentUserRank = leaders.findIndex((u: { id: string }) => u.id === session.user.id) + 1;
 
   return (
     <LeaderboardContent

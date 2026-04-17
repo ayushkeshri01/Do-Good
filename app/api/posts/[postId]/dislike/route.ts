@@ -61,8 +61,8 @@ export async function POST(
 
     if (post) {
       const totalMembers = new Set(
-        post.communities.flatMap((cp) =>
-          cp.community.members.map((m) => m.id)
+        post.communities.flatMap((cp: { community: { members: Array<{ id: string }> } }) =>
+          cp.community.members.map((m: { id: string }) => m.id)
         )
       ).size;
 

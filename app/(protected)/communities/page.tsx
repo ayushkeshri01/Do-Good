@@ -27,7 +27,7 @@ export default async function CommunitiesPage() {
     select: { communityId: true },
   });
 
-  const memberCommunityIds = userMemberships.map((m) => m.communityId);
+  const memberCommunityIds = userMemberships.map((m: { communityId: string }) => m.communityId);
 
   return (
     <CommunitiesContent

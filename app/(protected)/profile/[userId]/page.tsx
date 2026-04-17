@@ -64,7 +64,7 @@ export default async function UserProfilePage({ params }: Props) {
 
   const stats = {
     totalPosts: user.posts.length,
-    totalLikes: user.posts.reduce((acc, post) => acc + post._count.likes, 0),
+    totalLikes: user.posts.reduce((acc: number, post: { _count: { likes: number } }) => acc + post._count.likes, 0),
     totalCommunities: user.memberships.length,
   };
 

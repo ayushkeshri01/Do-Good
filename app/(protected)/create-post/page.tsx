@@ -23,7 +23,7 @@ export default async function CreatePostPage() {
     },
   });
 
-  const communities = userCommunities.map((m) => m.community);
+  const communities = userCommunities.map((m: { community: { id: string; name: string; slug: string } }) => m.community);
 
   if (communities.length === 0) {
     redirect("/communities");

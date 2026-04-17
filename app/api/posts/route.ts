@@ -105,7 +105,7 @@ export async function GET(req: NextRequest) {
 
     const communityIds = communityId
       ? [communityId]
-      : userCommunities.map((c) => c.communityId);
+      : userCommunities.map((c: { communityId: string }) => c.communityId);
 
     const posts = await prisma.post.findMany({
       where: {
