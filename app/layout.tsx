@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
   ),
   title: {
-    default: "Do-Good | Community Social Work Platform",
-    template: "%s | Do-Good",
+    default: "Neki | Community Social Work Platform",
+    template: "%s | Neki",
   },
   description:
     "Join your company's community to share social work, donations, and make a positive impact together. Earn points, climb the leaderboard, and inspire others.",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "corporate social responsibility",
     "csr",
   ],
-  authors: [{ name: "Do-Good Team" }],
-  creator: "Do-Good Team",
-  publisher: "Do-Good",
+  authors: [{ name: "Neki Team" }],
+  creator: "Neki Team",
+  publisher: "Neki",
   formatDetection: {
     email: false,
     address: false,
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Do-Good",
-    title: "Do-Good | Community Social Work Platform",
+    siteName: "Neki",
+    title: "Neki | Community Social Work Platform",
     description:
       "Join your company's community to share social work, donations, and make a positive impact together.",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Do-Good",
+        alt: "Neki",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Do-Good | Community Social Work Platform",
+    title: "Neki | Community Social Work Platform",
     description:
       "Join your company's community to share social work, donations, and make a positive impact together.",
     images: ["/og-image.png"],

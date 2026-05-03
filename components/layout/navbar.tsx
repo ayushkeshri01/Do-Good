@@ -51,7 +51,7 @@ export function Navbar() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">
             DG
           </div>
-          <span className="hidden font-semibold sm:inline-block">Do-Good</span>
+          <span className="hidden font-semibold sm:inline-block">Neki</span>
         </Link>
 
         {/* Desktop Navigation */}

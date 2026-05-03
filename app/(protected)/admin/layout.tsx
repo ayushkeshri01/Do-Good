@@ -35,7 +35,7 @@ export default async function AdminLayout({
             <Shield className="h-6 w-6 text-primary" />
             Admin Panel
           </h1>
-          <p className="text-muted-foreground">Manage your Do-Good community</p>
+          <p className="text-muted-foreground">Manage your Neki community</p>
         </div>
 
         <div className="flex gap-8">

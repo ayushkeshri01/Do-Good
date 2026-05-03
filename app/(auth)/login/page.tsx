@@ -185,7 +185,7 @@ const handleTabSwitch = (val: string) => {
             DG
           </div>
           <div className="space-y-2">
-            <CardTitle className="text-3xl font-bold tracking-tight">Do-Good</CardTitle>
+            <CardTitle className="text-3xl font-bold tracking-tight">Neki</CardTitle>
             <CardDescription className="text-base">
               Share social work and empower your community.
             </CardDescription>
@@ -341,7 +341,7 @@ const handleTabSwitch = (val: string) => {
         </CardContent>
         <CardFooter className="justify-center border-t border-border/50 bg-muted/20 py-4">
            <p className="text-xs text-muted-foreground text-center px-4">
-             Do-Good Community &copy; {new Date().getFullYear()}
+             Neki Community &copy; {new Date().getFullYear()}
            </p>
         </CardFooter>
       </Card>

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "dogood-uploads.s3.us-east-1.amazonaws.com",
+        hostname: "neki-uploads.s3.us-east-1.amazonaws.com",
         port: "",
         pathname: "/**",
       },

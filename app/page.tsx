@@ -22,7 +22,7 @@ export default async function HomePage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
                 DG
               </div>
-              <span className="text-xl font-semibold">Do-Good</span>
+              <span className="text-xl font-semibold">Neki</span>
             </div>
             <Link href="/login">
               <Button>Sign In</Button>
@@ -107,7 +107,7 @@ export default async function HomePage() {
               <Shield className="mx-auto mb-4 h-12 w-12 opacity-50" />
               <h2 className="text-2xl font-bold">Company-Only Access</h2>
               <p className="mt-2 max-w-xl mx-auto opacity-80">
-                Do-Good is exclusively for members of your organization.
+                Neki is exclusively for members of your organization.
                 Sign in with your company email to join.
               </p>
             </CardContent>
@@ -118,7 +118,7 @@ export default async function HomePage() {
         <footer className="py-8 border-t">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              Do-Good. Making a difference, together.
+              Neki. Making a difference, together.
             </p>
           </div>
         </footer>

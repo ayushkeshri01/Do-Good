@@ -1,4 +1,4 @@
-# Do-Good
+# Neki
 
 A community social work platform where company members can share social work, donations, and volunteer activities.
 
@@ -81,7 +81,7 @@ npm run admin:create # Create admin user
 ## Project Structure
 
 ```
-dogood/
+neki/
 ├── app/
 │   ├── (auth)/         # Login page
 │   ├── (protected)/    # Protected pages (requires auth)

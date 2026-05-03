@@ -39,9 +39,9 @@ export async function POST(req: Request) {
 
     if (process.env.SMTP_HOST) {
        await transporter.sendMail({
-          from: `"Do-Good" <${process.env.SMTP_FROM || "noreply@dogood.example.com"}>`,
+          from: `"Neki" <${process.env.SMTP_FROM || "noreply@neki.example.com"}>`,
           to: email,
-          subject: "Your Do-Good Login Code",
+          subject: "Your Neki Login Code",
           html: `
             <!DOCTYPE html>
             <html>
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
             <body class="body-bg" style="margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc;">
               <div class="card-bg" style="max-width: 500px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
                 <div style="background-color: #16a34a; padding: 30px; text-align: center;">
-                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 800; letter-spacing: -0.025em;">Do-Good</h1>
+                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 800; letter-spacing: -0.025em;">Neki</h1>
                 </div>
                 <div style="padding: 40px 30px; text-align: center;">
                   <h2 class="text-main" style="margin: 0 0 16px; font-size: 20px; color: #1e293b; font-weight: 600;">Verify your email</h2>
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
                   <p class="text-muted" style="margin: 32px 0 0; font-size: 14px; color: #94a3b8;">If you didn't request this code, you can safely ignore this email.</p>
                 </div>
                 <div class="footer-bg" style="background-color: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-                  <p class="text-muted" style="margin: 0; font-size: 12px; color: #64748b;">&copy; ${new Date().getFullYear()} Do-Good. Empowering community impact.</p>
+                  <p class="text-muted" style="margin: 0; font-size: 12px; color: #64748b;">&copy; ${new Date().getFullYear()} Neki. Empowering community impact.</p>
                 </div>
               </div>
             </body>

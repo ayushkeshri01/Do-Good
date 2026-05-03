@@ -1,6 +1,6 @@
-# Do-Good Setup Guide
+# Neki Setup Guide
 
-A step-by-step guide to set up your Do-Good application.
+A step-by-step guide to set up your Neki application.
 
 ---
 
@@ -35,7 +35,7 @@ GOOGLE_CLIENT_SECRET="your-google-client-secret"
 AWS_ACCESS_KEY_ID="your-aws-access-key"
 AWS_SECRET_ACCESS_KEY="your-aws-secret-key"
 AWS_REGION="us-east-1"
-AWS_S3_BUCKET="dogood-uploads"
+AWS_S3_BUCKET="neki-uploads"
 ```
 
 ---
@@ -46,7 +46,7 @@ AWS_S3_BUCKET="dogood-uploads"
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Click "Select a project" → "New Project"
-3. Name it "Do-Good" and click "Create"
+3. Name it "Neki" and click "Create"
 
 ### Step 3.2: Enable Google+ API
 
@@ -59,7 +59,7 @@ AWS_S3_BUCKET="dogood-uploads"
 1. Go to "APIs & Services" → "OAuth consent screen"
 2. Select "External" and click "Create"
 3. Fill in the details:
-   - App name: `Do-Good`
+   - App name: `Neki`
    - User support email: Your email
    - Developer contact: Your email
 4. Click "Save and Continue"
@@ -72,7 +72,7 @@ AWS_S3_BUCKET="dogood-uploads"
 1. Go to "APIs & Services" → "Credentials"
 2. Click "Create Credentials" → "OAuth client ID"
 3. Application type: "Web application"
-4. Name: `Do-Good Web Client`
+4. Name: `Neki Web Client`
 5. Authorized JavaScript origins:
    ```
    http://localhost:3000
@@ -100,7 +100,7 @@ GOOGLE_CLIENT_SECRET="your-client-secret"
 1. Log in to [AWS Console](https://console.aws.amazon.com/)
 2. Go to "S3" service
 3. Click "Create bucket"
-4. Bucket name: `dogood-uploads` (must be globally unique)
+4. Bucket name: `neki-uploads` (must be globally unique)
 5. AWS Region: Choose closest to your users (e.g., `us-east-1`)
 6. Uncheck "Block all public access" (we need public read for images)
 7. Acknowledge the warning
@@ -128,19 +128,19 @@ GOOGLE_CLIENT_SECRET="your-client-secret"
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::dogood-uploads/*"
+      "Resource": "arn:aws:s3:::neki-uploads/*"
     }
   ]
 }
 ```
 
-Replace `dogood-uploads` with your bucket name.
+Replace `neki-uploads` with your bucket name.
 
 ### Step 4.4: Create IAM User
 
 1. Go to [IAM Console](https://console.aws.amazon.com/iam/)
 2. Click "Users" → "Create user"
-3. Name: `dogood-uploader`
+3. Name: `neki-uploader`
 4. Select "Attach policies directly"
 5. Search and attach: `AmazonS3FullAccess` (or create a custom policy with only PutObject)
 6. Click "Next" → "Create user"
@@ -163,7 +163,7 @@ Replace `dogood-uploads` with your bucket name.
 AWS_ACCESS_KEY_ID="your-access-key-id"
 AWS_SECRET_ACCESS_KEY="your-secret-access-key"
 AWS_REGION="us-east-1"
-AWS_S3_BUCKET="dogood-uploads"
+AWS_S3_BUCKET="neki-uploads"
 ```
 
 ---
@@ -185,13 +185,13 @@ AWS_S3_BUCKET="dogood-uploads"
 
 2. Create database:
    ```bash
-   createdb dogood
+   createdb neki
    ```
 
 3. Create user (optional):
    ```bash
-   psql -d dogood -c "CREATE USER myuser WITH PASSWORD 'mypassword';"
-   psql -d dogood -c "GRANT ALL PRIVILEGES ON DATABASE dogood TO myuser;"
+   psql -d neki -c "CREATE USER myuser WITH PASSWORD 'mypassword';"
+   psql -d neki -c "GRANT ALL PRIVILEGES ON DATABASE neki TO myuser;"
    ```
 
 ### Option B: Cloud Database (Recommended for Production)
@@ -209,19 +209,19 @@ Use services like:
 ### Option C: Docker
 
 ```bash
-docker run --name dogood-db -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=dogood -p 5432:5432 -d postgres
+docker run --name neki-db -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=neki -p 5432:5432 -d postgres
 ```
 
 ### Step 5.1: Update .env
 
 ```env
-DATABASE_URL="postgresql://postgres:mypassword@localhost:5432/dogood"
+DATABASE_URL="postgresql://postgres:mypassword@localhost:5432/neki"
 ```
 
 ### Step 5.2: Run Database Migration
 
 ```bash
-cd dogood
+cd neki
 npm run db:migrate
 ```
 

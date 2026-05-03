@@ -12,11 +12,11 @@ const prisma = new PrismaClient();
 const ADMIN_EMAIL: string = "admin@outlook.com";
 
 // Replace with the admin's display name
-const ADMIN_NAME = "Admin - Do-Good";
+const ADMIN_NAME = "Admin - Neki";
 // ============================================
 
 async function createAdmin() {
-  console.log("🔧 Do-Good Admin Setup");
+  console.log("🔧 Neki Admin Setup");
   console.log("========================\n");
 
   // Validate input
